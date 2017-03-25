@@ -2,8 +2,8 @@
 
 function printAthleteInfos($athlete){
     
-    print_r($athlete);
-    
+    return $athlete;
+
 }
 
 ?>

@@ -1,5 +1,7 @@
 <?php
 include 'vendor/autoload.php';
+require 'presentation/printAthleteInfos.php';
+
 
 use Strava\API\OAuth;
 use Strava\API\Exception;
@@ -7,11 +9,6 @@ use Strava\API\Exception;
 use Pest;
 use Strava\API\Client;
 use Strava\API\Service\REST;
-
-
-use Conco\Presentation\printAthleteInfos;
-
-
 
 
 try {
@@ -46,7 +43,7 @@ try {
             
             //print_r($athlete);
 
-            printAthleteInfos($athlete);
+            print_r(printAthleteInfos($athlete));
 
             $activities = $client->getAthleteActivities();
             //print_r($activities);
