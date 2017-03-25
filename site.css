@@ -1,0 +1,64 @@
+  .spinner, .spinner .status {
+    position: relative; }
+  
+  .spinner {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+    .spinner .status {
+      top: 2px;
+      margin-left: 0.5em; }
+      .spinner .status:empty {
+        display: none; }
+    .spinner.lg .graphic {
+      border-width: 3px;
+      height: 32px;
+      width: 32px; }
+    .spinner.tiny {
+      height: 10px;
+      width: 10px; }
+    .spinner.centered, .spinner.vcentered {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      width: 100%; }
+    .spinner.vcentered {
+      left: 0;
+      margin-top: -12px;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 50%; }
+  
+  .spinner .graphic, .ajax-loading-image {
+    animation: spin 1.2s infinite linear;
+    -webkit-animation: spin 1.2s infinite linear;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-color: #eee;
+    border-radius: 50%;
+    border-style: solid;
+    border-top-color: #666;
+    border-top-style: solid;
+    border-width: 2px;
+    content: "";
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    vertical-align: middle;
+    width: 20px; }
+  
+  @-webkit-keyframes spin {
+    from {
+      -webkit-transform: rotate(0deg); }
+    to {
+      -webkit-transform: rotate(359deg); } }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg); }
+    to {
+      transform: rotate(359deg); } }
+
+.branding, .strava-logo {
+    background-image: url("https://www.strava.com/assets/svg/strava-logo-5428c45001c30a8796a8eca5951a15e8.svg");
+    height: 20px;
+    width: 95px;
+}

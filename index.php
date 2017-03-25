@@ -31,8 +31,12 @@ try {
 
 
         print '<html><body>';
+        print '<head><link rel="stylesheet" href="/site.css">/head>';
+        print '<body>';
         print '<h1>Benvenuto in Dislex Strava</h1>';
         //print '<p>Token per autenticazione '.$token.'</p>';
+
+
 
         try {
             $adapter = new Pest('https://www.strava.com/api/v3');
