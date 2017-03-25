@@ -16,12 +16,17 @@ try {
         print '<html><body>';
         print ' <h1>Autenticazione Richiesta</h1>';
         print '<a href="'.$oauth->getAuthorizationUrl().'">Connect a Strava</a>';
-        print '<7body></html>';
+        print '</body></html>';
     } else {
         $token = $oauth->getAccessToken('authorization_code', array(
             'code' => $_GET['code']
         ));
-        print $token;
+
+        print '<html><body>';
+        print '<h1>Benvenuto in Dislex Strava</h1>';
+        print '<p>Token per autenticazione '.$token.'</p>';
+        
+        print '</body></html>';
     }
 } catch(Exception $e) {
     print $e->getMessage();
