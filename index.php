@@ -14,7 +14,7 @@ try {
 
     if (!isset($_GET['code'])) {
         print '<html><body>';
-        print ' <h1>Autenticazione Richiesta</h1>'
+        print ' <h1>Autenticazione Richiesta</h1>';
         print '<a href="'.$oauth->getAuthorizationUrl().'">Connect a Strava</a>';
         print '<7body></html>';
     } else {
