@@ -1,24 +1,26 @@
 <?php
 include 'vendor/autoload.php';
 
-use Pest;
-use Strava\API\Client;
+use Strava\API\OAuth;
 use Strava\API\Exception;
-use Strava\API\Service\REST;
 
 try {
-    $adapter = new Pest('https://www.strava.com/api/v3');
-    $service = new REST($token, $adapter);  // Define your user token here..
-    $client = new Client($service);
+    $options = array(
+        'clientId'     => 14277,
+        'clientSecret' => 'fda09fc12c68cbee802380ee7d42a909d9bc926e',
+        'redirectUri'  => 'https://dislexstrava.herokuapp.com/callback.php'
+    );
+    $oauth = new OAuth($options);
 
-    $athlete = $client->getAthlete();
-    print_r($athlete);
-
-    $activities = $client->getAthleteActivities();
-    print_r($activities);
-
-    $club = $client->getClub(9729);
-    print_r($club);
+    if (!isset($_GET['code'])) {
+        print '<a href="'.$oauth->getAuthorizationUrl().'">connect</a>';
+    } else {
+        $token = $oauth->getAccessToken('authorization_code', array(
+            'code' => $_GET['code']
+        ));
+        print $token;
+    }
 } catch(Exception $e) {
     print $e->getMessage();
 }
+
