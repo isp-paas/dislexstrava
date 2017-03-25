@@ -9,6 +9,11 @@ use Strava\API\Client;
 use Strava\API\Service\REST;
 
 
+use Conco\Presentation\printAthleteInfos;
+
+
+
+
 try {
     $options = array(
         'clientId'     => 14277,
@@ -38,13 +43,16 @@ try {
             $client = new Client($service);
 
             $athlete = $client->getAthlete();
-            print_r($athlete);
+            
+            //print_r($athlete);
+
+            printAthleteInfos($athlete);
 
             $activities = $client->getAthleteActivities();
-            print_r($activities);
+            //print_r($activities);
 
-            $club = $client->getClub(9729);
-            print_r($club);
+            //$club = $client->getClub(9729);
+            //print_r($club);
         } catch(Exception $e) {
             print $e->getMessage();
         }
