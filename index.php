@@ -8,7 +8,7 @@ try {
     $options = array(
         'clientId'     => 14277,
         'clientSecret' => 'fda09fc12c68cbee802380ee7d42a909d9bc926e',
-        'redirectUri'  => 'https://dislexstrava.herokuapp.com/callback.php'
+        'redirectUri'  => 'https://dislexstrava.herokuapp.com/index.php'
     );
     $oauth = new OAuth($options);
 
