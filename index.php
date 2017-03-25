@@ -1,6 +1,6 @@
 <?php
 include 'vendor/autoload.php';
-require 'presentation/printAthleteInfos.php';
+require 'presentation/htmlrender.php';
 
 
 use Strava\API\OAuth;
@@ -32,7 +32,7 @@ try {
 
         print '<html><body>';
         print '<h1>Benvenuto in Dislex Strava</h1>';
-        print '<p>Token per autenticazione '.$token.'</p>';
+        //print '<p>Token per autenticazione '.$token.'</p>';
 
         try {
             $adapter = new Pest('https://www.strava.com/api/v3');
@@ -47,6 +47,7 @@ try {
 
             $activities = $client->getAthleteActivities();
             //print_r($activities);
+            print_r(printLastActivityInfos($activities));            
 
             //$club = $client->getClub(9729);
             //print_r($club);
