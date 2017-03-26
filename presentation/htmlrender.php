@@ -39,4 +39,16 @@ function printLastActivityInfos($activities){
 
 }
 
+function printLastActivityInfos($activities){
+
+	$html ="<div id=\"allActivity\"><ul>";
+	for($i = 0, $n = count ( $activities ); $i < $n ; $i ++) {
+		$html = $html."<li>name  : ".$activities[$i][name]." - type  : ".$activities[$i][type]."distance  : ".$activities[$i][distance]." moving_time : ".$activities[$i][moving_time]." - elapsed_time : ".$activities[$i][elapsed_time]." - start_date : ".$activities[$i][start_date]." - total_elevation_gain : ".$activities[$i][total_elevation_gain]." - kudos_count : ".$activities[$i][kudos_count]."</li>";
+	}
+	$html = $html."</ul></div>";   
+    return $html;
+
+}
+
+
 ?>
