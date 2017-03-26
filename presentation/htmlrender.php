@@ -11,7 +11,7 @@ function printAthleteInfos($athlete){
 	$html = $html."<li>follower : ".$athlete[follower_count]."</li>";
 	$html = $html."<li>friend   : ".$athlete[friend_count]."</li>";
 
-	$html = $html."<li>f<img src=\"".$athlete[profile]."\"></li>";
+	$html = $html."<li><img src=\"".$athlete[profile]."\"></li>";
 	$html = $html."</ul>";
 	$html = $html."</div>";
    //return $athlete;
