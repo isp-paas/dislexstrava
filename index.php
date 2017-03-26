@@ -53,6 +53,8 @@ try {
             //print_r($activities);
             print_r(printLastActivityInfos($activities));            
 
+            print_r(printAllActivityInfos($activities)); 
+
             //$club = $client->getClub(9729);
             //print_r($club);
         } catch(Exception $e) {

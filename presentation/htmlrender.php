@@ -39,7 +39,7 @@ function printLastActivityInfos($activities){
 
 }
 
-function printLastActivityInfos($activities){
+function printAllActivityInfos($activities){
 
 	$html ="<div id=\"allActivity\"><ul>";
 	for($i = 0, $n = count ( $activities ); $i < $n ; $i ++) {
